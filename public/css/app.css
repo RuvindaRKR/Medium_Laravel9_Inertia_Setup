@@ -11286,4 +11286,26 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.navbar-dark .navbar-nav .nav-item .nav-link:focus,
+.navbar-dark .navbar-nav .nav-item .nav-link:hover {
+  color: red;
+}
+
+.bg {
+  min-height: 70vh;
+  background-image: url("https://visualhunt.com/vh2/img/vh-bg-1920x1080-min-1.jpg");
+  background-size: cover;
+  background-position: bottom center;
+}
+
+.sticky-top {
+  transition: all 0.25s ease-in;
+}
+
+/* style for when sitcky is applied */
+.stuck .navbar.sticky-top {
+  background-color: #222 !important;
+  padding-top: 0.8rem !important;
+  padding-bottom: 0.8rem !important;
+}
 

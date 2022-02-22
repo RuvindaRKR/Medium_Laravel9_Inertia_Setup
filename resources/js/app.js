@@ -26,3 +26,4 @@ createInertiaApp({
 })
 
 InertiaProgress.init();
+

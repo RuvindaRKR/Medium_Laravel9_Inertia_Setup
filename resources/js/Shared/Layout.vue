@@ -1,19 +1,24 @@
 <template>
-  <section class="p-6 bg-gray-200">
-    <header class="flex justify-between">
-      <div class="flex items-center">
-        <h1 class="font-bold text-lg">My App</h1>
+  <div class="header bg py-2">
+    <div class="container text-white">
+      <div class="row pb-5">
+        <div class="col-6">Hello.</div>
+        <div class="col-6 text-end">555 899-1212</div>
       </div>
-
-      <Nav />
-    </header>
-  </section>
-
-  <section class="p-6">
-    <div class="max-w-3xl mx-auto">
-      <slot />
+      <!--/row-->
     </div>
-  </section>
+    <!--container-->
+  </div>
+  <span class="position-absolute trigger">
+    <!-- hidden trigger to apply 'stuck' styles -->
+  </span>
+
+  <Nav />
+
+  <div class="container-fluid">
+    <br />
+    <slot />
+  </div>
 </template>
 
 <script>
@@ -21,5 +26,15 @@ import Nav from "./Nav.vue";
 
 export default {
   components: { Nav },
+
+  mounted() {
+    new IntersectionObserver(function (e, o) {
+      if (e[0].intersectionRatio > 0) {
+        document.documentElement.removeAttribute("class");
+      } else {
+        document.documentElement.setAttribute("class", "stuck");
+      }
+    }).observe(document.querySelector(".trigger"));
+  },
 };
 </script>
