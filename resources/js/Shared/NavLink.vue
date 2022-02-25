@@ -1,5 +1,5 @@
 <template>
-  <Link class="" :class="{ 'fw-bold': active }">
+  <Link :class="{ 'text-warning': active }">
     <slot />
   </Link>
 </template>
